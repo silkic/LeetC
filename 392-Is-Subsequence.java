@@ -5,17 +5,12 @@ class Solution {
       }
       int i=0;
       int j =0;
-      int tot = 0;
       while(i < s.length() && j < t.length()){
         if(s.charAt(i) == t.charAt(j)){
-            tot++;
             i++;
-            j++;
         }
-        else{
-            j++;
-        }
+     j++;
       }
-        return tot == s.length();
+        return i == s.length();
     }
 }
