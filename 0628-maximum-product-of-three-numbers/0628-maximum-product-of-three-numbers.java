@@ -6,7 +6,7 @@ class Solution {
         Arrays.sort(nums);
         int i = 0; int j = i+1; int k = j+1;
         while(k < nums.length){
-            prod = nums[n-1] *nums[n-2] * nums[n-3];
+            prod =Math.max( nums[n-1] *nums[n-2] * nums[n-3], nums[n-1]*nums[0]*nums[1]);
             if(prod > maxprod){
                 maxprod = prod;
             }
