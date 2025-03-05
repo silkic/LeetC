@@ -3,20 +3,16 @@ class Solution {
         int maxlen = 0;
         int l = 0;
         int r = 0;
-        int Acnt = 0;
+        int maxfreq = 0;
+        int freq[] = new int[26];
         while (r < s.length()) {
-            if (s.charAt(r) == 'A') {
-                Acnt++;
-            }
-            if (Acnt > k) {
-                if (s.charAt(l) == 'A') {
-                    Acnt--;
-                }
+            freq[s.charAt(r) - 'A']++;
+            maxfreq = Math.max(maxfreq,freq[s.charAt(r)-'A']);
+            if(((r-l+1) - maxfreq) > k){
+                freq[s.charAt(l) - 'A']--;
                 l++;
             }
-            if (Acnt <= k) {
-                maxlen = Math.max(maxlen, r - l + 1);
-            }
+            maxlen = Math.max(maxlen,r-l+1);
             r++;
         }
         return maxlen;
