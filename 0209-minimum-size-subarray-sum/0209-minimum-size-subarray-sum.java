@@ -13,6 +13,9 @@ class Solution {
             }
             r++;
         }
+        if (minlen == Integer.MAX_VALUE) {
+            minlen = 0;
+        }
         return minlen;
     }
 }
